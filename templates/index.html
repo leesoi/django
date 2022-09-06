@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% comment %} TODO: 5. base.html 템플릿을 만들어 모든 페이지에서 상속받아 보여주세요 {% endcomment %}
+
+{% block content %}
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {% comment %} TODO: 6. bootstrap 스타일을 적용해주세요	 {% endcomment %}
+  <title>FastCampus Django</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="container">
+      {% comment %} TODO: 4. /index 페이지에는 로그인 한 유저 이름을 출력해야 합니다. ex) hello, 홍길동 {% endcomment %}
+      <div class="p-3 mb-2 bg-success text-white"></div>
+      <div class="p-3 mb-2 bg-danger text-white"></div>
+      <div class="p-3 mb-2 bg-warning text-dark"></div>
+      <div class="p-3 mb-2 bg-info text-white"></div>
+      {% if user %}
+      Hello, {{user.username}}
+      {% else %}
+      Hello, world
+      {% endif %}
+
+  </div>
+
+</body>
+
+</html>
+{% endblock %}
